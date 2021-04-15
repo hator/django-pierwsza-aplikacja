@@ -1,4 +1,4 @@
-# django-prosty-blog
+# django-pierwsza-aplikacja
 Aplikacja ze szkolenia Pierwsza Aplikacja Webowa w Pythonie
 
 ## Zmieniane pliki
