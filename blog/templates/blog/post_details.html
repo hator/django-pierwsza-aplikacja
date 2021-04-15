@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.author }}, dnia {{ post.date }}</p>
+    <p>{{ post.content }}</p>
+
+    <h3>Komentarze</h3>
+    <ul>
+        {% for comment in post.comment_set.all %}
+            <li>{{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+
+    <form action="/posts/{{ post.id }}/comment" method="post">
+        {% csrf_token %}
+        <input type="text" name="content">
+        <input type="submit" value="Dodaj">
+    </form>
+
+    <a href="/">Wróć do listy</a>
+</body>
+</html>
